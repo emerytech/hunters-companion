@@ -1,0 +1,8 @@
+build/
+res/drawable/*.png
+.gradle/
+local.properties
+*.keystore
+*.jks
+*.aab
+*.apk
