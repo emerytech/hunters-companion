@@ -5,6 +5,6 @@ for filename in sys.argv[1:]:
     with zipfile.ZipFile(filename) as archive:
         for name in archive.namelist():
             lower = name.lower()
-            if lower.endswith(('.png', '.jpg', '.jpeg', '.dds', '.so', '.bin', '.pkg', '.keystore', '.jks')):
+            if lower.endswith(('.apk', '.png', '.jpg', '.jpeg', '.dds', '.so', '.bin', '.pkg', '.keystore', '.jks')):
                 raise SystemExit(f'Unexpected payload in {filename}: {name}')
     print(f'Payload audit passed: {filename}')
