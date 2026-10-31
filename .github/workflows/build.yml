@@ -17,6 +17,7 @@ jobs:
           log-accepted-android-sdk-licenses: false
       - run: sdkmanager 'platforms;android-36' 'build-tools;35.0.0'
       - uses: gradle/actions/setup-gradle@v4
+      - run: ./scripts/test-runtime.sh
       - run: ./gradlew --no-daemon assembleDebug lintRelease
       - run: python3 scripts/audit-artifacts.py build/outputs/apk/debug/*.apk
       - uses: actions/upload-artifact@v4
